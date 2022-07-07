@@ -12,37 +12,42 @@ With a given endpoint to connect to a pokemon database and a chart with the tabl
 
 Method: GET Pokemon  
 Params: name (ej: "pikachu")  
-Response: {  
-    "pok_id": 1,  
-    "name": "Pikachu",  
-    "height": 4,  
-    " weight ": 60,  
-    "base_experience": 112,  
-    "type": "elctryc"  
-}  
+Response:  
+```json
+{
+    "pok_id": 1,
+    "name": "Pikachu",
+    "height": 4,
+    " weight ": 60,
+    "base_experience": 112,
+    "type": "elctryc"
+}
+```
 
 Method: Get Pokemons By Type  
 Params: type (ej: "elctryc")  
-Response: [  
-    {  
-    "id": 25,  
-    "name": "Pikachu",  
-    "height": 4,  
-    "weight": 60,  
-    "base_experience": 112,  
-    "type": "elctryc"  
-    },  
-    {  
-    "pok_id": 26,  
-    "name": "Raichu",  
-    "height": 8,  
-    "weight": 300,  
-    "base_experience": 218,  
-    "type": "elctryc"  
-    }  
-    . . .  
-]  
-
+Response:   
+```json
+[
+    {
+    "id": 25,
+    "name": "Pikachu",
+    "height": 4,
+    "weight": 60,
+    "base_experience": 112,
+    "type": "elctryc"
+    },
+    {
+    "pok_id": 26,
+    "name": "Raichu",
+    "height": 8,
+    "weight": 300,
+    "base_experience": 218,
+    "type": "elctryc"
+    }
+    . . .
+]
+```
 # Methods to Document
 
 Description given: add a pokemon to a particular team  
@@ -60,26 +65,28 @@ Optional Query Params:
         The base stats will be overwrite with the value of the key that matches that base state name (if found). New values must be greater or equal to base stats values  
     name: personalized alias of the pokemon  
         If null given, the original pokemon name will be used with a numeric index appended based on the number of pokemons with that alias on the team  
-Response (status code 201):{  
-    id: 447  
-    name: riolu  
-    height: 7  
-    weight: 202  
-    base_experience: 57  
-    type: fighting  
-    abilities: [inner-focus, steadfast]  
-    moves: [low-kick, sky-uppercut, swords-dance, thunder-punch]  
-    stats: [  
-        hp: 45,  
-        atk: 72,  
-        def: 50,  
-        sp_atk: 35,  
-        sp_def: 40,   
-        speed: 60  
-    ],  
-    id_team: 3  
-}  
-
+Response (status code 201):   
+```json
+{
+    id:447
+    name: riolu
+    height: 7
+    weight: 202
+    base_experience: 5
+    type: fighting
+    abilities: [inner-focus, steadfast]
+    moves: [low-kick, sky-uppercut, swords-dance, thunder-punch]
+    stats: [
+        hp: 45,
+        atk: 72,
+        def: 50,
+        sp_atk: 35,
+        sp_def: 40,
+        speed: 60
+    ],
+    id_team: 3
+}
+```
 
 Description given: Delete a pokemon from a particular team  
 Method: DELETE  
@@ -94,7 +101,7 @@ Endpoint: api/teams/{idTeam}/pokemons/{aliasPokemon}
 Params:   
     aliasPokemon: the pokemon's alias previously saved  
 Optional Query Params: The query params are identical to the add method  
-Response: The response is identical to the previous add, except it has status code TODO  
+Response: The response is identical to the previous add method, except it has status code TODO  
 
 
 # Aditional Methods
